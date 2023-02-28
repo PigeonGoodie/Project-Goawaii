@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private float _speed = 5;
@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform _dashSparkle;
 
     private Vector3 _input;
+
 
     private void Start()
     {
@@ -23,12 +24,12 @@ public class PlayerMovement : MonoBehaviour
         GatherInput();
         Look();
         Dash();
+    
     }
 
     private void FixedUpdate()
     {
         Move();
-
     }
 
     private void GatherInput()
@@ -68,6 +69,8 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(.4f);
         _dashSparkle.GetComponent<ParticleSystem>().enableEmission = false;
     }
+
+   
 }
 
 public static class Helpers
