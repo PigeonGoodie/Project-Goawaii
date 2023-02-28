@@ -17,7 +17,7 @@ public class PlayerRangedAttack : MonoBehaviour
             projectileInstance = Instantiate(projectile, project.position, project.rotation) as Rigidbody;
             projectileInstance.AddForce(project.forward * projectileSpeed);
 
-            Debug.Log("SHOOT");
+           // Debug.Log("SHOOT");
         }
     }
 }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8212679667126023809}
   m_Layer: 0
   m_Name: SM_GO_Projectile
-  m_TagString: Untagged
+  m_TagString: Glitter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
