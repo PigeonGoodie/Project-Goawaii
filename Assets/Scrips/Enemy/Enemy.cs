@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
 
     public GameObject enemy;
+   // public GameObject GlitterDrop;
 
     public void Start()
     {
@@ -15,7 +16,9 @@ public class Enemy : MonoBehaviour
     public void OnTriggerEnter(Collider collide)
     {
         if (collide.tag == "MeleeWeapon")
-        {      
+        {
+           // Instantiate(GlitterDrop);
+
             Destroy(enemy.gameObject);
 
             Debug.Log("WAAAH!");
