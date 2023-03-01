@@ -6207,9 +6207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1858a77b4cc71f4cb73170e7b5a90c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mesh1: {fileID: 1642045751}
-  Mesh2: {fileID: 705463920}
-  _cuteify: {fileID: 731135595}
+  oldObject: {fileID: 1642045751}
+  newObject: {fileID: 705463920}
+  cuteifyParticles: {fileID: 731135595}
 --- !u!65 &1171947152
 BoxCollider:
   m_ObjectHideFlags: 0

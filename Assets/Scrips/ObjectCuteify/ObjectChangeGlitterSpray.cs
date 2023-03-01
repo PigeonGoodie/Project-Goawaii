@@ -6,16 +6,16 @@ public class ObjectChangeGlitterSpray : MonoBehaviour
 {
 
     //object we want to change from (first mesh 1 then after glitter mesh 2)
-    public GameObject Mesh1;
-    public GameObject Mesh2;
+    public GameObject oldObject;
+    public GameObject newObject;
 
-    public Transform _cuteify;
+    public Transform cuteifyParticles;
 
     public void Start()
     {
-        _cuteify.GetComponent<ParticleSystem>().enableEmission = false;
+        cuteifyParticles.GetComponent<ParticleSystem>().enableEmission = false;
 
-        Mesh2.SetActive(false);
+        newObject.SetActive(false);
     }
 
     public void OnTriggerEnter(Collider collide)
@@ -23,7 +23,7 @@ public class ObjectChangeGlitterSpray : MonoBehaviour
         if (collide.tag == "Glitter")
         {
             
-            _cuteify.GetComponent<ParticleSystem>().enableEmission = true;
+            cuteifyParticles.GetComponent<ParticleSystem>().enableEmission = true;
 
             StartCoroutine(stopCutefyEmission());
 
@@ -33,18 +33,18 @@ public class ObjectChangeGlitterSpray : MonoBehaviour
     IEnumerator stopCutefyEmission()
     {
         yield return new WaitForSeconds(.4f);
-        _cuteify.GetComponent<ParticleSystem>().enableEmission = false;
+        cuteifyParticles.GetComponent<ParticleSystem>().enableEmission = false;
 
         yield return new WaitForSeconds(.5f);
         DestroyObject();
 
         yield return new WaitForSeconds(.1f);
-        Mesh2.SetActive(true);
+        newObject.SetActive(true);
     }
 
 
     private void DestroyObject()
     {  
-        Destroy(Mesh1);
+        Destroy(oldObject);
     }
 }
