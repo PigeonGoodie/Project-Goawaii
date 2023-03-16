@@ -281,7 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8740560352438211900}
   m_Layer: 0
-  m_Name: StoneFence
+  m_Name: SM_GO_SF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
