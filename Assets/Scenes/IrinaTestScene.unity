@@ -6012,7 +6012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!195 &334446540
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6049,6 +6049,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 334446540}
   Player: {fileID: 1694799417}
+  ChaseSpeed: 0.6
+  IdleSpeed: 0.3
+  EnemyIdleSound: {fileID: 0}
+  EnemyChaseSound: {fileID: 0}
+  EnemyDeathSound: {fileID: 0}
+  maxHealth: 5
+  currentHealth: 5
+  healthBar: {fileID: 0}
 --- !u!65 &334446542
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16808,7 +16816,6 @@ Transform:
   m_Children:
   - {fileID: 334446545}
   - {fileID: 655578505}
-  - {fileID: 2039742218}
   - {fileID: 1602310259}
   - {fileID: 1717068946}
   - {fileID: 1694799417}
@@ -20627,37 +20634,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1951140824}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2039742217
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2039742218}
-  m_Layer: 0
-  m_Name: Enemies
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2039742218
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039742217}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.3779564, y: 14.84673, z: 19.216522}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 764379664}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2073051348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 457760, guid: 6c1e328deef14cf41982d5f9232e04ff,
