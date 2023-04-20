@@ -23,11 +23,8 @@ public class EnemyBehaviour : MonoBehaviour
     private Animator animator;
 
     //Enemy Health
-    public int maxHealth = 5; // The maximum health of the object
-    public int currentHealth; // The current health of the object
-    private int damageAmount = 1;
+    public int lives = 2;
 
-    public Image healthBar; // The health bar UI element
     private void Awake()
     {
         Player = GameObject.Find("Player").transform;
@@ -36,8 +33,7 @@ public class EnemyBehaviour : MonoBehaviour
     void Start()
     {
         //health
-        currentHealth = maxHealth;
-        UpdateHealthBar();
+      
     }
 
     // Update is called once per frame
@@ -46,62 +42,4 @@ public class EnemyBehaviour : MonoBehaviour
         Enemy.SetDestination(Player.position);
     }
 
-    public void OnTriggerEnter(Collider collide)
-    {
-        if (collide.tag == "MeleeWeapon")
-        {
-            // Instantiate(GlitterDrop);
-
-            Destroy(Enemy.gameObject);
-
-            Debug.Log("WAAAH!");
-
-        }
-    }
-
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            {
-                TakeDamage(10);
-            }
-        }
-    }
-
-    // Call this method to apply damage to the object
-    public void TakeDamage(int damageAmount)
-    {
-        currentHealth -= damageAmount;
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-        UpdateHealthBar();
-    }
-
-    // Call this method to heal the object
-    public void Heal(int healAmount)
-    {
-        currentHealth += healAmount;
-        if (currentHealth > maxHealth)
-        {
-            currentHealth = maxHealth;
-        }
-        UpdateHealthBar();
-    }
-
-    // This method updates the health bar UI element
-    void UpdateHealthBar()
-    {
-        float healthPercent = (float)currentHealth / (float)maxHealth;
-        healthBar.fillAmount = healthPercent;
-    }
-
-    // This method is called when the object dies
-    void Die()
-    {
-        // Destroy the object or do something else here
-        Destroy(gameObject);
-    }
 }

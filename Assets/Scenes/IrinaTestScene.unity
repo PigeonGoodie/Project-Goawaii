@@ -6009,9 +6009,7 @@ MonoBehaviour:
   EnemyIdleSound: {fileID: 0}
   EnemyChaseSound: {fileID: 0}
   EnemyDeathSound: {fileID: 0}
-  maxHealth: 5
-  currentHealth: 5
-  healthBar: {fileID: 0}
+  lives: 2
 --- !u!65 &334446542
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6091,7 +6089,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334446539}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2520437, y: 14.47, z: 25.446522}
+  m_LocalPosition: {x: -1.24, y: 14.48, z: 25.446522}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6511,7 +6509,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -6579,7 +6577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f567a4fc32da8458ddf5dd187b0d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 334446539}
+  lives: 2
 --- !u!1001 &520051810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21111,7 +21109,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1694799413
 MonoBehaviour:
