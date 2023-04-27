@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2692771302496858408}
   - component: {fileID: 2692771302496858409}
   m_Layer: 0
-  m_Name: World
+  m_Name: PS_World
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

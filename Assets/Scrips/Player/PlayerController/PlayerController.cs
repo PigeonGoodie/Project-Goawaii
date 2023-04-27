@@ -13,10 +13,11 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 _input;
 
-
+   // public Animator animator;
     private void Start()
     {
         _dashSparkle.GetComponent<ParticleSystem>().enableEmission = false;
+     //   animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Move()
-    {
+    {  
         _rb.MovePosition(transform.position + transform.forward * _input.normalized.magnitude * _speed * Time.deltaTime);
 
     }
@@ -66,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator stopDashSparkles()
     {
-        yield return new WaitForSeconds(.4f);
+        yield return new WaitForSeconds(.1f);
         _dashSparkle.GetComponent<ParticleSystem>().enableEmission = false;
     }
 
