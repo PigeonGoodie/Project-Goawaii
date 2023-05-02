@@ -69457,7 +69457,8 @@ MonoBehaviour:
   _rb: {fileID: 5866666020345520846}
   _speed: 7
   _turnSpeed: 2500
-  _dash: 800
+  _dashDistance: 10
+  _dashSpeed: 70
   _dashSparkle: {fileID: 75540050}
 --- !u!1 &5885810297925740332
 GameObject:
