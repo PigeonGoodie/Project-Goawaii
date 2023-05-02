@@ -10,10 +10,13 @@ public class ObjectChangeGlitterSpray : MonoBehaviour
     public GameObject newObject;
 
     public Transform cuteifyParticles;
+    private ParticleSystem.EmissionModule cuteifyParticlesEmission;
 
     public void Start()
     {
-        cuteifyParticles.GetComponent<ParticleSystem>().enableEmission = false;
+        // J: Saved particle object to avoid multiple GetComponent calls and remove warnings
+        cuteifyParticlesEmission = cuteifyParticles.GetComponent<ParticleSystem>().emission;
+        cuteifyParticlesEmission.enabled = false;
 
         newObject.SetActive(false);
     }
@@ -22,8 +25,8 @@ public class ObjectChangeGlitterSpray : MonoBehaviour
     {
         if (collide.tag == "Glitter")
         {
-            
-            cuteifyParticles.GetComponent<ParticleSystem>().enableEmission = true;
+
+            cuteifyParticlesEmission.enabled = true;
 
             StartCoroutine(stopCutefyEmission());
 
@@ -33,7 +36,7 @@ public class ObjectChangeGlitterSpray : MonoBehaviour
     IEnumerator stopCutefyEmission()
     {
         yield return new WaitForSeconds(.4f);
-        cuteifyParticles.GetComponent<ParticleSystem>().enableEmission = false;
+        cuteifyParticlesEmission.enabled = false;
 
         yield return new WaitForSeconds(.5f);
         DestroyObject();

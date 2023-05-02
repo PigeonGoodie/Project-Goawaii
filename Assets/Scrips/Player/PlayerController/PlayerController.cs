@@ -10,13 +10,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _dash = 500;
 
     public Transform _dashSparkle;
+    private ParticleSystem.EmissionModule _dashSparkleParticles;
 
     private Vector3 _input;
 
    // public Animator animator;
     private void Start()
     {
-        _dashSparkle.GetComponent<ParticleSystem>().enableEmission = false;
+        // J: Saved particle object to avoid multiple GetComponent calls and remove warnings
+        _dashSparkleParticles = _dashSparkle.GetComponent<ParticleSystem>().emission;
+        _dashSparkleParticles.enabled = false;
      //   animator = GetComponent<Animator>();
     }
 
@@ -58,7 +61,7 @@ public class PlayerController : MonoBehaviour
         {
             _rb.AddForce(transform.forward * _dash);
 
-            _dashSparkle.GetComponent<ParticleSystem>().enableEmission = true;
+            _dashSparkleParticles.enabled = true;
             StartCoroutine(stopDashSparkles());
  
             Debug.Log("dash");
@@ -68,7 +71,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator stopDashSparkles()
     {
         yield return new WaitForSeconds(.1f);
-        _dashSparkle.GetComponent<ParticleSystem>().enableEmission = false;
+        _dashSparkleParticles.enabled = false;
     }
 
    
