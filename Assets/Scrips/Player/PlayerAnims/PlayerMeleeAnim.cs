@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class PlayerMeleeAnim : MonoBehaviour
 {
-    public Animator anim;
-    // Start is called before the first frame update
+    private Animator anim;
+
+    public float attackCD;
+
+    private float attackTimer;
+
     void Start()
     {
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (attackTimer > 0)
+            attackTimer -= Time.deltaTime;
+
         if (Input.GetKeyDown(KeyCode.E))
         {
-            anim.Play("PlayerAttackMelee");
+            if (attackTimer > 0)
+                return;
 
-            Debug.Log("Slash");
+            anim.Play("PlayerAttackMelee");
+            attackTimer = attackCD;
         }
     }
 }

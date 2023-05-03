@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Rigidbody _rb;
     [SerializeField] private float _speed = 5;
     [SerializeField] private float _turnSpeed = 360;
     [SerializeField] private float _dashDistance = 1;
@@ -12,10 +11,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private LayerMask _wallMask;
 
-    private bool _doDash;
+    private Rigidbody _rb;
 
-    public float maxMana;
-    public float mana;
+    private bool _doDash;
 
     public Transform _dashSparkle;
     private ParticleSystem.EmissionModule _dashSparkleParticles;
@@ -27,7 +25,8 @@ public class PlayerController : MonoBehaviour
     // public Animator animator;
     private void Start()
     {
-        // J: Saved particle object to avoid multiple GetComponent calls and remove warnings
+        _rb = GetComponent<Rigidbody>();
+
         _dashSparkleParticles = _dashSparkle.GetComponent<ParticleSystem>().emission;
         _dashSparkleParticles.enabled = false;
         //   animator = GetComponent<Animator>();
@@ -86,13 +85,6 @@ public class PlayerController : MonoBehaviour
             if (Vector3.Distance(transform.position, _dashPos) < 0.001f)
                 _doDash = false;
         }
-    }
-
-    public void AddMana()
-    {
-        mana += 1;
-        if (mana > maxMana)
-            mana = maxMana;
     }
 
     IEnumerator DoSparkle()
