@@ -8,9 +8,7 @@ public class GlitterDrop : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
-        PlayerController player = other.GetComponent<PlayerController>();
-
-        player.AddMana();
+        other.GetComponent<CuteifyAttack>().AddMana();
         Destroy(gameObject);
     }
 }
