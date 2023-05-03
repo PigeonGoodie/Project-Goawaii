@@ -14,6 +14,11 @@ public class CuteifyAttack : MonoBehaviour
     public float maxMana;
     private float mana;
 
+    private void Start()
+    {
+        UpdateMana();
+    }
+
     void Update()
     {
         if (Input.GetKey(KeyCode.Q))

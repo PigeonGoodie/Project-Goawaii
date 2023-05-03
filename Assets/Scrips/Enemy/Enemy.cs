@@ -12,12 +12,8 @@ public class Enemy : MonoBehaviour
 
     public void OnTriggerEnter(Collider collide)
     {
-        Debug.Log("Hit");
-
         if (collide.CompareTag("MeleeWeapon"))
         {
-            // Instantiate(GlitterDrop);
-
             health--;
 
             if (health > 0)
@@ -25,8 +21,6 @@ public class Enemy : MonoBehaviour
 
             SpawnGlitter();
             Destroy(gameObject);
-
-            Debug.Log("WAAAH!");
         }
     }
 

@@ -7,12 +7,19 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyToSpawn;
     public float spawnTime;
 
+    public float despawnDistance;
+
     private float spawnTimer = 0;
     private GameObject enemy;
 
     void Update()
     {
-        if (enemy != null) return;
+        if (enemy != null)
+        {
+            if (Vector3.Distance(transform.position, enemy.transform.position) > despawnDistance)
+                Destroy(enemy);
+            return;
+        }
 
         spawnTimer -= Time.deltaTime;
 
@@ -21,6 +28,5 @@ public class EnemySpawner : MonoBehaviour
             spawnTimer = spawnTime;
             enemy = Instantiate(enemyToSpawn, transform.position, transform.rotation);
         }
-
     }
 }
