@@ -25,16 +25,13 @@ public class ObjectChangeGlitterSpray : MonoBehaviour
     {
         if (collide.tag == "Glitter")
         {
-
-            cuteifyParticlesEmission.enabled = true;
-
             StartCoroutine(stopCutefyEmission());
-
         }
     }
 
     IEnumerator stopCutefyEmission()
     {
+        cuteifyParticlesEmission.enabled = true;
         yield return new WaitForSeconds(.4f);
         cuteifyParticlesEmission.enabled = false;
 
@@ -47,7 +44,7 @@ public class ObjectChangeGlitterSpray : MonoBehaviour
 
 
     private void DestroyObject()
-    {  
+    {
         Destroy(oldObject);
     }
 }

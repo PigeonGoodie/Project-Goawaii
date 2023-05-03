@@ -4,7 +4,25 @@ using UnityEngine;
 
 public class GlitterDrop : MonoBehaviour
 {
- private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+
+        PlayerController player = other.GetComponent<PlayerController>();
+
+        player.AddMana();
+        Destroy(gameObject);
+    }
+}
+
+/*
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GlitterDrop : MonoBehaviour
+{
+    private void OnTriggerEnter(Collider other)
     {
         PlayerInventoryGlitter playerInventory = other.GetComponent<PlayerInventoryGlitter>();
 
@@ -17,3 +35,4 @@ public class GlitterDrop : MonoBehaviour
         }
     }
 }
+*/

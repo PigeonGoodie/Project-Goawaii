@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
 
     private bool _doDash;
 
+    public float maxMana;
+    public float mana;
+
     public Transform _dashSparkle;
     private ParticleSystem.EmissionModule _dashSparkleParticles;
 
@@ -83,6 +86,13 @@ public class PlayerController : MonoBehaviour
             if (Vector3.Distance(transform.position, _dashPos) < 0.001f)
                 _doDash = false;
         }
+    }
+
+    public void AddMana()
+    {
+        mana += 1;
+        if (mana > maxMana)
+            mana = maxMana;
     }
 
     IEnumerator DoSparkle()
