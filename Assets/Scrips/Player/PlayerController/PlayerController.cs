@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _dashDistance = 1;
     [SerializeField] private float _dashSpeed = 1;
 
+    [SerializeField] private LayerMask _wallMask;
+
     private bool _doDash;
 
     public Transform _dashSparkle;
@@ -19,13 +21,13 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 _input;
 
-   // public Animator animator;
+    // public Animator animator;
     private void Start()
     {
         // J: Saved particle object to avoid multiple GetComponent calls and remove warnings
         _dashSparkleParticles = _dashSparkle.GetComponent<ParticleSystem>().emission;
         _dashSparkleParticles.enabled = false;
-     //   animator = GetComponent<Animator>();
+        //   animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -33,7 +35,7 @@ public class PlayerController : MonoBehaviour
         GatherInput();
         Look();
         Dash();
-    
+
     }
 
     private void FixedUpdate()
@@ -55,7 +57,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Move()
-    {  
+    {
         _rb.MovePosition(transform.position + transform.forward * _input.normalized.magnitude * _speed * Time.deltaTime);
 
     }
@@ -64,7 +66,11 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            _dashPos = transform.position + transform.forward * _dashDistance;
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.forward, out hit, _dashDistance, _wallMask))
+                _dashPos = hit.point;
+            else
+                _dashPos = transform.position + transform.forward * _dashDistance;
             _doDash = true;
             StartCoroutine(DoSparkle());
             Debug.Log("dash");

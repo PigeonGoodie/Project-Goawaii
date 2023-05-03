@@ -69459,6 +69459,9 @@ MonoBehaviour:
   _turnSpeed: 2500
   _dashDistance: 10
   _dashSpeed: 70
+  _wallMask:
+    serializedVersion: 2
+    m_Bits: 1
   _dashSparkle: {fileID: 75540050}
 --- !u!1 &5885810297925740332
 GameObject:
