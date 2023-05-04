@@ -14,7 +14,6 @@ public class ObjectChangeGlitterSpray : MonoBehaviour
 
     public void Start()
     {
-        // J: Saved particle object to avoid multiple GetComponent calls and remove warnings
         cuteifyParticlesEmission = cuteifyParticles.GetComponent<ParticleSystem>().emission;
         cuteifyParticlesEmission.enabled = false;
 
@@ -23,13 +22,13 @@ public class ObjectChangeGlitterSpray : MonoBehaviour
 
     public void OnTriggerEnter(Collider collide)
     {
-        if (collide.tag == "Glitter")
+        if (collide.CompareTag("Glitter"))
         {
-            StartCoroutine(stopCutefyEmission());
+            StartCoroutine(StopCutefyEmission());
         }
     }
 
-    IEnumerator stopCutefyEmission()
+    IEnumerator StopCutefyEmission()
     {
         cuteifyParticlesEmission.enabled = true;
         yield return new WaitForSeconds(.4f);

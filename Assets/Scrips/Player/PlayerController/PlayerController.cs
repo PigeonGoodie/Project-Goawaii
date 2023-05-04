@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        _rb.MovePosition(transform.position + transform.forward * _input.normalized.magnitude * _speed * Time.deltaTime);
+        _rb.MovePosition(transform.position + _input.normalized.magnitude * _speed * Time.deltaTime * transform.forward);
 
     }
 
@@ -68,8 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit, _dashDistance, _wallMask))
+            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, _dashDistance, _wallMask))
                 _dashPos = hit.point;
             else
                 _dashPos = transform.position + transform.forward * _dashDistance;

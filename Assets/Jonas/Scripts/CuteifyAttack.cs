@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class CuteifyAttack : MonoBehaviour
 {
-    public GameObject projectile;
-    public Transform spawnPos;
-    public float projectileSpeed;
+    public GameObject cuteifyParticles;
+    private ParticleSystem.EmissionModule cuteifyParticlesEmission;
 
     public Image manaBar;
 
@@ -17,21 +16,27 @@ public class CuteifyAttack : MonoBehaviour
     private void Start()
     {
         UpdateMana();
+
+        cuteifyParticlesEmission = cuteifyParticles.GetComponent<ParticleSystem>().emission;
+        cuteifyParticlesEmission.enabled = false;
     }
 
     void Update()
     {
         if (Input.GetKey(KeyCode.Q))
         {
-            if (mana <= 0) return;
+            if (mana <= 0)
+            {
+                cuteifyParticlesEmission.enabled = false;
+                return;
+            }
+            cuteifyParticlesEmission.enabled = true;
 
             mana -= Time.deltaTime;
             UpdateMana();
-
-            GameObject projectileInstance;
-            projectileInstance = Instantiate(projectile, spawnPos.position, spawnPos.rotation);
-            projectileInstance.GetComponent<Rigidbody>().AddForce(spawnPos.forward * projectileSpeed);
         }
+        else
+            cuteifyParticlesEmission.enabled = false;
     }
 
     public void AddMana()
