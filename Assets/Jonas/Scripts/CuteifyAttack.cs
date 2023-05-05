@@ -13,8 +13,13 @@ public class CuteifyAttack : MonoBehaviour
     public float maxMana;
     private float mana;
 
+    private Camera mainCamera;
+    public Transform pivot;
+
     private void Start()
     {
+        mainCamera = Camera.main;
+
         UpdateMana();
 
         cuteifyParticlesEmission = cuteifyParticles.GetComponent<ParticleSystem>().emission;
@@ -23,6 +28,8 @@ public class CuteifyAttack : MonoBehaviour
 
     void Update()
     {
+        RotateAttack();
+
         if (Input.GetKey(KeyCode.Q))
         {
             if (mana <= 0)
@@ -37,6 +44,15 @@ public class CuteifyAttack : MonoBehaviour
         }
         else
             cuteifyParticlesEmission.enabled = false;
+    }
+
+    private void RotateAttack()
+    {
+        Vector3 cursorPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        cursorPosition.z = 0;
+
+        Vector3 dir = cursorPosition - pivot.position;
+
     }
 
     public void AddMana()

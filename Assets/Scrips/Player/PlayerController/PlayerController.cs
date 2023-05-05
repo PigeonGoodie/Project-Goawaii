@@ -22,10 +22,17 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 _input;
 
+    public int maxHp = 4;
+    private int hp;
+    private PlayerHealth _healthUIManager;
+
     // public Animator animator;
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _healthUIManager = GetComponent<PlayerHealth>();
+        hp = maxHp;
+        _healthUIManager.UpdateHealth(hp);
 
         _dashSparkleParticles = _dashSparkle.GetComponent<ParticleSystem>().emission;
         _dashSparkleParticles.enabled = false;
@@ -38,6 +45,8 @@ public class PlayerController : MonoBehaviour
         Look();
         Dash();
 
+        if (Input.GetKeyDown(KeyCode.F))
+            TakeDamage(1);
     }
 
     private void FixedUpdate()
@@ -84,6 +93,15 @@ public class PlayerController : MonoBehaviour
             if (Vector3.Distance(transform.position, _dashPos) < 0.001f)
                 _doDash = false;
         }
+    }
+
+    public void TakeDamage(int dmg)
+    {
+        hp -= dmg;
+        if (hp <= 0)
+            Debug.Log("Ded");
+
+        _healthUIManager.UpdateHealth(hp);
     }
 
     IEnumerator DoSparkle()
