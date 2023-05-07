@@ -30,7 +30,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.016162038, g: 1, b: 0, a: 1}
     - _Color: {r: 0.016162038, g: 1, b: 0, a: 1}
-    - _EmissionColor: {r: 6.17538, g: 20.846827, b: 12.474245, a: 1}
+    - _EmissionColor: {r: 3.5468245, g: 11.973357, b: 7.1645722, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5979185273327827738
 MonoBehaviour:
