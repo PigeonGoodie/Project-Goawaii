@@ -15,7 +15,6 @@ public class PlayerRangedAttack : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Q))
         {
-            Debug.Log("test");
             Rigidbody projectileInstance;
             projectileInstance = Instantiate(projectile, project.position, project.rotation) as Rigidbody;
             projectileInstance.AddForce(project.forward * projectileSpeed);

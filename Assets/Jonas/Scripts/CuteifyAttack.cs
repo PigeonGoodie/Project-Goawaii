@@ -11,7 +11,7 @@ public class CuteifyAttack : MonoBehaviour
     public Image manaBar;
 
     public float maxMana;
-    private float mana;
+    public float mana;
 
     private Camera mainCamera;
     public Transform pivot;
@@ -48,11 +48,15 @@ public class CuteifyAttack : MonoBehaviour
 
     private void RotateAttack()
     {
-        Vector3 cursorPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        cursorPosition.z = 0;
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
 
-        Vector3 dir = cursorPosition - pivot.position;
+        if(groundPlane.Raycast(ray, out float planeDistance))
+        {
+            Vector3 cursorPos = ray.GetPoint(planeDistance);
 
+            pivot.LookAt(cursorPos, Vector3.up);
+        }
     }
 
     public void AddMana()
