@@ -27,19 +27,19 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void Awake()
     {
-        Player = GameObject.FindGameObjectWithTag("Player").transform;
+        
        // animator = GetComponent<Animator>();
     }
     void Start()
     {
-        //health
-      
+        Player = GameObject.FindGameObjectWithTag("Player").transform;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Enemy.SetDestination(Player.position);
+        Enemy.SetDestination(Player.position);
     }
 
 }
