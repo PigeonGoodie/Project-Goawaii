@@ -4742,7 +4742,7 @@ PrefabInstance:
     - target: {fileID: 3222750189629698243, guid: 6058ea2e6890c3140a5da4f6b350d911,
         type: 3}
       propertyPath: despawnDistance
-      value: 10
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3222750189629698245, guid: 6058ea2e6890c3140a5da4f6b350d911,
         type: 3}
@@ -4752,7 +4752,7 @@ PrefabInstance:
     - target: {fileID: 3222750189629698245, guid: 6058ea2e6890c3140a5da4f6b350d911,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43951,7 +43951,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: cdf7c3da5d1ae2547a85953663884ff8, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1643013850
 GameObject:
