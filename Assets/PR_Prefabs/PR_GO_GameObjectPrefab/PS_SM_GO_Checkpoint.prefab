@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8600114532924805721}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.73, y: 0.03, z: -33.32}
   m_LocalScale: {x: 1.0707, y: 1.0707, z: 1.0707}
   m_ConstrainProportionsScale: 0
@@ -40,7 +40,7 @@ Transform:
   - {fileID: 3145362666494732107}
   - {fileID: 8600114533006443760}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8600114532264607189
 PrefabInstance:
@@ -54,6 +54,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_S_CheckpointHead
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963962748929634563, guid: a869da73eec35b4448c5782570dd8065,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5125376629081967849, guid: a869da73eec35b4448c5782570dd8065,
         type: 3}
@@ -209,6 +214,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_D_Heart (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7792304299338376730, guid: 10449059b44b0744f82f842249e9242f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -237,6 +247,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_V_Root_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651758407048543771, guid: 644a39ac9fd0ece46a0215135abe5050,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7801607447243775393, guid: 644a39ac9fd0ece46a0215135abe5050,
         type: 3}
@@ -392,6 +407,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_D_Star (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7644163140583124954, guid: d31b9f7fa59b95b4eab825b567d40073,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -481,6 +501,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_D_Star
       objectReference: {fileID: 0}
+    - target: {fileID: 7644163140583124954, guid: d31b9f7fa59b95b4eab825b567d40073,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -500,9 +525,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8600114532924805720}
     m_Modifications:
+    - target: {fileID: 127276, guid: 6c1e328deef14cf41982d5f9232e04ff, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 165734, guid: 6c1e328deef14cf41982d5f9232e04ff, type: 3}
       propertyPath: m_Name
       value: PS_Star
+      objectReference: {fileID: 0}
+    - target: {fileID: 165734, guid: 6c1e328deef14cf41982d5f9232e04ff, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 177572, guid: 6c1e328deef14cf41982d5f9232e04ff, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 432350, guid: 6c1e328deef14cf41982d5f9232e04ff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -724,6 +761,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_V_Root_2
       objectReference: {fileID: 0}
+    - target: {fileID: 7032128376816221825, guid: 5a24b2b8a9624c14a8f8ab03e2caaf1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -802,6 +844,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_S_CheckpointBody
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961386468018305073, guid: 8ef5bc14d81581e4296362eee0743eee,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -902,6 +949,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_D_Star (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7644163140583124954, guid: d31b9f7fa59b95b4eab825b567d40073,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -930,6 +982,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_V_Root_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657909849340847586, guid: cd4264b93b060c849994fd247c108c81,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7187063794513466855, guid: cd4264b93b060c849994fd247c108c81,
         type: 3}
@@ -1069,6 +1126,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_D_Heart
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792304299338376730, guid: 10449059b44b0744f82f842249e9242f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
