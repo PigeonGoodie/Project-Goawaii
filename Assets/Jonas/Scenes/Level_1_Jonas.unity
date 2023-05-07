@@ -61541,6 +61541,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 735343085740526229, guid: 9e19342eb826d0641b495d3efd13acf1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 990457524399068274, guid: 9e19342eb826d0641b495d3efd13acf1,
         type: 3}
       propertyPath: m_RootOrder
@@ -61596,6 +61601,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6583949339223559691, guid: 9e19342eb826d0641b495d3efd13acf1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a68b55094c2a1dc4bb81dd5bda978632, type: 2}
     - target: {fileID: 6583949339223559703, guid: 9e19342eb826d0641b495d3efd13acf1,
         type: 3}
       propertyPath: manaBar
