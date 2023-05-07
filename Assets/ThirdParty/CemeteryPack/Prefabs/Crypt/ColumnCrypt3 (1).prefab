@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 456298}
   - component: {fileID: 3335448}
   - component: {fileID: 2333942}
-  - component: {fileID: 6572042}
   m_Layer: 0
   m_Name: ColumnCrypt3 (1)
   m_TagString: Untagged
@@ -84,24 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6572042
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 160118}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.012634888, y: 0.09277565, z: 0.01322197}
-  m_Center: {x: -0.000601494, y: 0.046303067, z: 0.00011931895}

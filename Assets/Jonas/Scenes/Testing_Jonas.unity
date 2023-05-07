@@ -777,6 +777,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 735343085665004743, guid: 9e19342eb826d0641b495d3efd13acf1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d7c9d05faf015b64e907ac838b5ef9e4, type: 2}
+    - target: {fileID: 735343085665004744, guid: 9e19342eb826d0641b495d3efd13acf1,
+        type: 3}
+      propertyPath: ShapeModule.angle
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 735343085665004744, guid: 9e19342eb826d0641b495d3efd13acf1,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 735343085665004744, guid: 9e19342eb826d0641b495d3efd13acf1,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 735343085665004744, guid: 9e19342eb826d0641b495d3efd13acf1,
+        type: 3}
+      propertyPath: SizeBySpeedModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 735343085665004744, guid: 9e19342eb826d0641b495d3efd13acf1,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 735343085665004744, guid: 9e19342eb826d0641b495d3efd13acf1,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 84.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 735343085665004744, guid: 9e19342eb826d0641b495d3efd13acf1,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 1.42
+      objectReference: {fileID: 0}
     - target: {fileID: 990457524399068274, guid: 9e19342eb826d0641b495d3efd13acf1,
         type: 3}
       propertyPath: m_RootOrder
