@@ -26,7 +26,8 @@ public class PlayerController : MonoBehaviour
     private int hp;
     private PlayerHealth _healthUIManager;
 
-    // public Animator animator;
+    private Animator animator;
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
         _dashSparkleParticles = _dashSparkle.GetComponent<ParticleSystem>().emission;
         _dashSparkleParticles.enabled = false;
-        //   animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
         GatherInput();
         Look();
         Dash();
+        SetAnim();
 
         if (Input.GetKeyDown(KeyCode.F))
             TakeDamage(1);
@@ -71,6 +73,11 @@ public class PlayerController : MonoBehaviour
     {
         _rb.MovePosition(transform.position + _input.normalized.magnitude * _speed * Time.deltaTime * transform.forward);
 
+    }
+
+    private void SetAnim()
+    {
+        animator.SetFloat("speed", _input.magnitude);
     }
 
     private void Dash()

@@ -20,12 +20,12 @@ public class PlayerMeleeAnim : MonoBehaviour
         if (attackTimer > 0)
             attackTimer -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             if (attackTimer > 0)
                 return;
 
-            anim.Play("PlayerAttackMelee");
+            anim.SetTrigger("attack");
             attackTimer = attackCD;
         }
     }

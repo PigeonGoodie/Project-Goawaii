@@ -28,9 +28,9 @@ public class CuteifyAttack : MonoBehaviour
 
     void Update()
     {
-        RotateAttack();
+        // RotateAttack();
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Mouse1))
         {
             if (mana <= 0)
             {
