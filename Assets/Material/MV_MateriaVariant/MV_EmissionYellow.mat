@@ -23,11 +23,11 @@ Material:
   m_Name: MV_EmissionYellow
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 2100000, guid: cb05ac501e2bdd64c85ed2997a565e63, type: 2}
-  m_ModifiedSerializedProperties: 0
+  m_ModifiedSerializedProperties: 2
   m_ValidKeywords:
   - _EMISSION
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -41,5 +41,5 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _EmissionColor: {r: 24.251463, g: 15.23652, b: 0, a: 1}
+    - _EmissionColor: {r: 24.178312, g: 9.623802, b: 0, a: 1}
   m_BuildTextureStacks: []
