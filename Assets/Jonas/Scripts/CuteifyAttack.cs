@@ -16,9 +16,12 @@ public class CuteifyAttack : MonoBehaviour
     private Camera mainCamera;
     public Transform pivot;
 
+    private Animator anim;
+
     private void Start()
     {
         mainCamera = Camera.main;
+        anim = GetComponent<Animator>();
 
         UpdateMana();
 
@@ -29,6 +32,8 @@ public class CuteifyAttack : MonoBehaviour
     void Update()
     {
         // RotateAttack();
+
+        anim.SetBool("cuteify", cuteifyParticlesEmission.enabled);
 
         if (Input.GetKey(KeyCode.Mouse1))
         {

@@ -12,8 +12,13 @@ public class EnemySpawner : MonoBehaviour
     private float spawnTimer = 0;
     private GameObject enemy;
 
+    public bool doRespawn = true;
+
     void Update()
     {
+        if (!doRespawn)
+            return;
+
         if (enemy != null)
         {
             if (Vector3.Distance(transform.position, enemy.transform.position) > despawnDistance)
