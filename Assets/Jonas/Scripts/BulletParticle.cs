@@ -8,7 +8,7 @@ public class BulletParticle : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        if (other.layer != cutifyable) return;
+        if ((cutifyable & (1 << gameObject.layer)) != 0) return;
         other.GetComponent<CuteifyableObject>().Cuteify();
     }
 }

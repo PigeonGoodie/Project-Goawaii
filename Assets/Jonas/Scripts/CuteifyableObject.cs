@@ -11,6 +11,8 @@ public class CuteifyableObject : MonoBehaviour
     {
         oldObject.SetActive(true);
         newObject.SetActive(false);
+
+        CuteifyManager.cuteifyTot++;
     }
 
     public void Cuteify()
@@ -18,5 +20,7 @@ public class CuteifyableObject : MonoBehaviour
         GetComponent<Collider>().enabled = false;
         oldObject.SetActive(false);
         newObject.SetActive(true);
+
+        CuteifyManager.DoCuteify();
     }
 }
