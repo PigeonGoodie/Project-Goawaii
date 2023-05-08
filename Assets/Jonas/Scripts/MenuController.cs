@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    public string GameScene;
-
     public GameObject activeScreen;
 
     public GameObject escScreen;
@@ -22,7 +20,7 @@ public class MenuController : MonoBehaviour
     public void PlayGame()
     {
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene(GameScene, LoadSceneMode.Single);
+        SceneManager.LoadScene("Level_1_Irina", LoadSceneMode.Single);
     }
 
     public void ShowScreen(GameObject screen)

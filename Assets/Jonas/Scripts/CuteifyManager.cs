@@ -8,11 +8,6 @@ public class CuteifyManager : MonoBehaviour
     public static int cuteifyTot;
     public static int cuteifyCount = 0;
 
-    private void Update()
-    {
-        Debug.Log($"{cuteifyCount}/{cuteifyTot}");
-    }
-
     public static void DoCuteify()
     {
         cuteifyCount++;
