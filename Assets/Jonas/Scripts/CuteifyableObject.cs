@@ -12,7 +12,7 @@ public class CuteifyableObject : MonoBehaviour
         oldObject.SetActive(true);
         newObject.SetActive(false);
 
-        CuteifyManager.cuteifyTot++;
+        CuteifyManager.AddCuteifyObject(gameObject);
     }
 
     public void Cuteify()
@@ -21,6 +21,6 @@ public class CuteifyableObject : MonoBehaviour
         oldObject.SetActive(false);
         newObject.SetActive(true);
 
-        CuteifyManager.DoCuteify();
+        CuteifyManager.DoCuteify(gameObject);
     }
 }

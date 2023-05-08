@@ -8,8 +8,24 @@ public class CuteifyManager : MonoBehaviour
     public static int cuteifyTot;
     public static int cuteifyCount = 0;
 
-    public static void DoCuteify()
+    private static List<GameObject> cuteifyObjects;
+
+    private void Awake()
     {
+        cuteifyObjects = new List<GameObject>();
+    }
+
+    public static void AddCuteifyObject(GameObject obj)
+    {
+        cuteifyObjects.Add(obj);
+        cuteifyTot++;
+    }
+
+    public static void DoCuteify(GameObject obj)
+    {
+        if (!cuteifyObjects.Contains(obj)) return;
+
+        cuteifyObjects.Remove(obj);
         cuteifyCount++;
 
         if (cuteifyCount < cuteifyTot) return;
