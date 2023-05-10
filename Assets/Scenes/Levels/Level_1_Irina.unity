@@ -28678,6 +28678,11 @@ PrefabInstance:
       propertyPath: manaBar
       value: 
       objectReference: {fileID: 1050413577}
+    - target: {fileID: 5149442423460264752, guid: 3359d526eb27c104ca3ed92c58d963d1,
+        type: 3}
+      propertyPath: _speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5455855072563695746, guid: 3359d526eb27c104ca3ed92c58d963d1,
         type: 3}
       propertyPath: m_Name
