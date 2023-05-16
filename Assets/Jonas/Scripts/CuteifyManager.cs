@@ -30,7 +30,8 @@ public class CuteifyManager : MonoBehaviour
 
         if (cuteifyCount < cuteifyTot) return;
 
-        SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
+        GameObject.FindGameObjectWithTag("Canvas").GetComponent<PauseManager>().OpenWinScreen();
+        //SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
 
     }
 }

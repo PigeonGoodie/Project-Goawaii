@@ -13,14 +13,10 @@ public class CuteifyAttack : MonoBehaviour
     public float maxMana;
     public float mana;
 
-    private Camera mainCamera;
-    public Transform pivot;
-
     private Animator anim;
 
     private void Start()
     {
-        mainCamera = Camera.main;
         anim = GetComponent<Animator>();
 
         UpdateMana();
@@ -51,18 +47,18 @@ public class CuteifyAttack : MonoBehaviour
             cuteifyParticlesEmission.enabled = false;
     }
 
-    private void RotateAttack()
-    {
-        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+    //private void RotateAttack()
+    //{
+    //    Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+    //    Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
 
-        if(groundPlane.Raycast(ray, out float planeDistance))
-        {
-            Vector3 cursorPos = ray.GetPoint(planeDistance);
+    //    if(groundPlane.Raycast(ray, out float planeDistance))
+    //    {
+    //        Vector3 cursorPos = ray.GetPoint(planeDistance);
 
-            pivot.LookAt(cursorPos, Vector3.up);
-        }
-    }
+    //        pivot.LookAt(cursorPos, Vector3.up);
+    //    }
+    //}
 
     public void AddMana()
     {

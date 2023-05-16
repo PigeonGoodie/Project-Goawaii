@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
             _doDash = true;
             dashTimer = _dashCooldown;
             StartCoroutine(DoSparkle());
-            Debug.Log("dash");
+            //Debug.Log("dash");
         }
 
         if (_doDash)
@@ -118,7 +118,10 @@ public class PlayerController : MonoBehaviour
     {
         hp -= dmg;
         if (hp <= 0)
-            Debug.Log("Ded");
+        {
+            //Debug.Log("Ded");
+            GameObject.FindGameObjectWithTag("Canvas").GetComponent<PauseManager>().OpenDeathScreen();
+        }
 
         Vector3 knockBackDir = (transform.position - source.position).normalized;
         _rb.AddForce(knockBackDir * _knockBackForce, ForceMode.Impulse);
@@ -131,10 +134,14 @@ public class PlayerController : MonoBehaviour
     {
         if (transform.position.y > _killPlaneHeight) return;
 
-        hp = maxHp;
-        _healthUIManager.UpdateHealth(hp);
+        // Dead
+        GameObject.FindGameObjectWithTag("Canvas").GetComponent<PauseManager>().OpenDeathScreen();
 
-        transform.position = startPos;
+        // Instant respawn
+        //hp = maxHp;
+        //_healthUIManager.UpdateHealth(hp);
+
+        //transform.position = startPos;
     }
 
     IEnumerator DoSparkle()
