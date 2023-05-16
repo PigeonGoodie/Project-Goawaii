@@ -8,10 +8,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _turnSpeed = 360;
     [SerializeField] private float _dashDistance = 1;
     [SerializeField] private float _dashSpeed = 1;
+    [SerializeField] private float _knockBackForce = 20;
+    [SerializeField] private float _knockBackDuration = .1f;
+    [SerializeField] private float _killPlaneHeight = -10;
 
     [SerializeField] private LayerMask _wallMask;
 
     private Rigidbody _rb;
+    private Vector3 startPos;
 
     private bool _doDash;
 
@@ -38,6 +42,8 @@ public class PlayerController : MonoBehaviour
         _dashSparkleParticles = _dashSparkle.GetComponent<ParticleSystem>().emission;
         _dashSparkleParticles.enabled = false;
         animator = GetComponent<Animator>();
+
+        startPos = transform.position;
     }
 
     private void Update()
@@ -46,9 +52,10 @@ public class PlayerController : MonoBehaviour
         Look();
         Dash();
         SetAnim();
+        CheckPlane();
 
-        if (Input.GetKeyDown(KeyCode.F))
-            TakeDamage(1);
+        //if (Input.GetKeyDown(KeyCode.F))
+        //    TakeDamage(1);
     }
 
     private void FixedUpdate()
@@ -102,13 +109,27 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int dmg)
+    public void TakeDamage(int dmg, Transform source)
     {
         hp -= dmg;
         if (hp <= 0)
             Debug.Log("Ded");
 
+        Vector3 knockBackDir = (transform.position - source.position).normalized;
+        _rb.AddForce(knockBackDir * _knockBackForce, ForceMode.Impulse);
+        StartCoroutine(DoStop());
+
         _healthUIManager.UpdateHealth(hp);
+    }
+
+    private void CheckPlane()
+    {
+        if (transform.position.y > _killPlaneHeight) return;
+
+        hp = maxHp;
+        _healthUIManager.UpdateHealth(hp);
+
+        transform.position = startPos;
     }
 
     IEnumerator DoSparkle()
@@ -116,6 +137,13 @@ public class PlayerController : MonoBehaviour
         _dashSparkleParticles.enabled = true;
         yield return new WaitForSeconds(.1f);
         _dashSparkleParticles.enabled = false;
+    }
+
+    IEnumerator DoStop()
+    {
+        yield return new WaitForSeconds(_knockBackDuration);
+        _rb.velocity = Vector3.zero;
+        yield return null;
     }
 }
 
