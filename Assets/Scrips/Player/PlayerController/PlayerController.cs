@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _turnSpeed = 360;
     [SerializeField] private float _dashDistance = 1;
     [SerializeField] private float _dashSpeed = 1;
+    [SerializeField] private float _dashCooldown = 1;
     [SerializeField] private float _knockBackForce = 20;
     [SerializeField] private float _knockBackDuration = .1f;
     [SerializeField] private float _killPlaneHeight = -10;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private ParticleSystem.EmissionModule _dashSparkleParticles;
 
     private Vector3 _dashPos;
+    private float dashTimer;
 
     private Vector3 _input;
 
@@ -53,6 +55,8 @@ public class PlayerController : MonoBehaviour
         Dash();
         SetAnim();
         CheckPlane();
+
+        if (dashTimer > 0) dashTimer -= Time.deltaTime;
 
         //if (Input.GetKeyDown(KeyCode.F))
         //    TakeDamage(1);
@@ -89,13 +93,14 @@ public class PlayerController : MonoBehaviour
 
     private void Dash()
     {
-        if (Input.GetKeyDown("space"))
+        if (!_doDash && Input.GetKeyDown("space") && dashTimer <= 0)
         {
             if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, _dashDistance, _wallMask))
                 _dashPos = hit.point;
             else
                 _dashPos = transform.position + transform.forward * _dashDistance;
             _doDash = true;
+            dashTimer = _dashCooldown;
             StartCoroutine(DoSparkle());
             Debug.Log("dash");
         }
