@@ -7,7 +7,7 @@ public class MessageController : MonoBehaviour
     private List<GameObject> messages;
     private int messagePos = 0;
 
-    private void Start()
+    private void Awake()
     {
         messages = new List<GameObject>();
 
