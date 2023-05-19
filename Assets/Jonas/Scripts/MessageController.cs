@@ -9,6 +9,7 @@ public class MessageController : MonoBehaviour
     private int messagePos = 0;
 
     public GameObject news;
+    public GameObject notification;
 
     private void Awake()
     {
@@ -37,7 +38,13 @@ public class MessageController : MonoBehaviour
             return;
         }
 
-        if(messagePos >= messages.Count)
+        if (notification.activeSelf)
+        {
+            notification.SetActive(false);
+            return;
+        }
+
+        if (messagePos >= messages.Count)
         {
             MessagesDone();
             return;
