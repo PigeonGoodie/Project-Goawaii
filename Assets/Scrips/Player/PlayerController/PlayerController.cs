@@ -123,9 +123,12 @@ public class PlayerController : MonoBehaviour
             GameObject.FindGameObjectWithTag("Canvas").GetComponent<PauseManager>().OpenDeathScreen();
         }
 
-        Vector3 knockBackDir = (transform.position - source.position).normalized;
-        _rb.AddForce(knockBackDir * _knockBackForce, ForceMode.Impulse);
-        StartCoroutine(DoStop());
+        if (source != null)
+        {
+            Vector3 knockBackDir = (transform.position - source.position).normalized;
+            _rb.AddForce(knockBackDir * _knockBackForce, ForceMode.Impulse);
+            StartCoroutine(DoStop());
+        }
 
         _healthUIManager.UpdateHealth(hp);
     }

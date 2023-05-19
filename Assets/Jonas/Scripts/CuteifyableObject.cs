@@ -7,6 +7,8 @@ public class CuteifyableObject : MonoBehaviour
     public GameObject oldObject;
     public GameObject newObject;
 
+    public bool addHealth = false;
+
     private void Start()
     {
         oldObject.SetActive(true);
@@ -20,6 +22,9 @@ public class CuteifyableObject : MonoBehaviour
         GetComponent<Collider>().enabled = false;
         oldObject.SetActive(false);
         newObject.SetActive(true);
+
+        if (addHealth)
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().TakeDamage(-1, null);
 
         CuteifyManager.DoCuteify(gameObject);
     }
