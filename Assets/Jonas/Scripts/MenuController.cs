@@ -20,7 +20,7 @@ public class MenuController : MonoBehaviour
     public void PlayGame()
     {
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene("Level_1_Irina", LoadSceneMode.Single);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 
     public void ShowScreen(GameObject screen)

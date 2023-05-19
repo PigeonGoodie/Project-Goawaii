@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MessageController : MonoBehaviour
 {
     private List<GameObject> messages;
     private int messagePos = 0;
+
+    public GameObject news;
 
     private void Awake()
     {
@@ -28,6 +31,12 @@ public class MessageController : MonoBehaviour
 
     private void DisplayNextMessage()
     {
+        if (news.activeSelf)
+        {
+            news.SetActive(false);
+            return;
+        }
+
         if(messagePos >= messages.Count)
         {
             MessagesDone();
@@ -40,5 +49,6 @@ public class MessageController : MonoBehaviour
     private void MessagesDone()
     {
         Debug.Log("All messages done");
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
 }

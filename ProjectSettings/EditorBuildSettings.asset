@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Jonas/Scenes/StartScene.unity
     guid: 3a9aa5630072fa74b8f8a27e74fcae1e
   - enabled: 1
+    path: Assets/Scenes/Levels/Cutscene.unity
+    guid: ddfdb8342599a394b8ff92e9612a4e92
+  - enabled: 1
     path: Assets/Scenes/Levels/Level_1_Irina.unity
     guid: 4559551fa89f4984dbdccea857d8f1fa
   m_configObjects: {}
