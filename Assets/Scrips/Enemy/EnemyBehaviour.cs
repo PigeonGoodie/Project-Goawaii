@@ -11,8 +11,11 @@ public class EnemyBehaviour : MonoBehaviour
     public Transform Player;
 
     //movement to enemy
-    public float ChaseSpeed = 0.6f;
-    public float IdleSpeed = 0.3f;
+    public float ChaseSpeed = 2f;
+
+    public float detectionRange = 10;
+
+    private bool doChase = false;
 
     //Audio from enemy
     public AudioClip EnemyIdleSound;
@@ -22,24 +25,32 @@ public class EnemyBehaviour : MonoBehaviour
     //Enemy animation
     private Animator animator;
 
-    //Enemy Health
-    public int lives = 2;
-
     private void Awake()
     {
-        
-       // animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        Enemy.SetDestination(Player.position);
-    }
+        if (doChase && Vector3.Distance(transform.position, Player.position) > detectionRange)
+        {
+            doChase = false;
+            Enemy.speed = 0;
+            animator.SetBool("doRun", doChase);
+        }
+        else if (!doChase && Vector3.Distance(transform.position, Player.position) < detectionRange)
+        {
+            doChase = true;
+            Enemy.speed = ChaseSpeed;
+            animator.SetBool("doRun", doChase);
+        }
 
+        if (doChase)
+            Enemy.SetDestination(Player.position);
+    }
 }

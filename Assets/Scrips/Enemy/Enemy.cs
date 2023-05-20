@@ -12,11 +12,22 @@ public class Enemy : MonoBehaviour
     public LayerMask groundMask;
     public LayerMask playerMask;
 
+    private Animator animator;
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void OnTriggerEnter(Collider collide)
     {
         if (collide.CompareTag("MeleeWeapon"))
         {
             health--;
+            animator.SetTrigger("damage");
+            audioSource.Play();
 
             if (health > 0)
                 return;
