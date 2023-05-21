@@ -8,24 +8,31 @@ public class CuteifyableObject : MonoBehaviour
     public GameObject newObject;
 
     public bool addHealth = false;
+    public bool dontCountForGoal = false;
 
     private void Start()
     {
-        oldObject.SetActive(true);
-        newObject.SetActive(false);
+        if (oldObject != null)
+            oldObject.SetActive(true);
+        if (newObject != null)
+            newObject.SetActive(false);
 
-        CuteifyManager.AddCuteifyObject(gameObject);
+        if (!dontCountForGoal)
+            CuteifyManager.AddCuteifyObject(gameObject);
     }
 
     public void Cuteify()
     {
         GetComponent<Collider>().enabled = false;
-        oldObject.SetActive(false);
-        newObject.SetActive(true);
+        if (oldObject != null)
+            oldObject.SetActive(false);
+        if (newObject != null)
+            newObject.SetActive(true);
 
         if (addHealth)
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().TakeDamage(-1, null);
 
-        CuteifyManager.DoCuteify(gameObject);
+        if (!dontCountForGoal)
+            CuteifyManager.DoCuteify(gameObject);
     }
 }
