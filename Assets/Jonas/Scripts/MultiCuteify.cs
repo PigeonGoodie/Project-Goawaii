@@ -29,6 +29,7 @@ public class MultiCuteify : MonoBehaviour
         oldObject.SetActive(false);
         newObject.SetActive(true);
 
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().TakeDamage(-1, null);
         Camera.main.GetComponent<CameraShake>().ShakeCamera();
 
         done = true;

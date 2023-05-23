@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 61
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3222750189629698243
 MonoBehaviour:
@@ -47,3 +47,6 @@ MonoBehaviour:
   enemyToSpawn: {fileID: 5952055110405327134, guid: a6c01500e8f526e42bb014bccfa8ec28,
     type: 3}
   spawnTime: 3
+  despawnDistance: 100
+  minSpawnDistance: 10
+  doRespawn: 1
