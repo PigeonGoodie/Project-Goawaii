@@ -354,6 +354,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: -256162368505433973}
+    - targetCorrespondingSourceObject: {fileID: 100066, guid: 8e7a6da35dedf9a44b55ccf835b8cdba,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7013773846021237262}
   m_SourcePrefab: {fileID: 100100000, guid: 8e7a6da35dedf9a44b55ccf835b8cdba, type: 3}
 --- !u!1 &1442954837360843141 stripped
 GameObject:
@@ -563,6 +567,45 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7013773846021237262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442954837360843141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba55ed6519b05e4dba48c430030923a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  animationDuration: 0.5
+  startScale: {x: 2, y: 2, z: 2}
+  targetScale: {x: 4.6151, y: 4.6151, z: 4.6151}
 --- !u!4 &1442954837360936357 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400066, guid: 8e7a6da35dedf9a44b55ccf835b8cdba,
