@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private LayerMask _wallMask;
 
+    public AudioSource damageAudio;
+
     private Rigidbody _rb;
     private Vector3 startPos;
 
@@ -116,7 +118,11 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int dmg, Transform source)
     {
+        int oldHp = hp;
         hp -= dmg;
+        if(hp < oldHp)
+            damageAudio.Play();
+
         if (hp <= 0)
         {
             //Debug.Log("Ded");
