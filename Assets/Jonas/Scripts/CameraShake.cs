@@ -5,6 +5,8 @@ public class CameraShake : MonoBehaviour
     public float shakeDuration = 0.5f;
     public float shakeIntensity = 0.1f;
 
+    public AudioSource audioSource;
+
     private float shakeTimer;
 
     private void Update()
@@ -25,6 +27,7 @@ public class CameraShake : MonoBehaviour
 
     public void ShakeCamera()
     {
+            audioSource.Play();
         // Set the shake timer to the duration
         shakeTimer = shakeDuration;
     }
