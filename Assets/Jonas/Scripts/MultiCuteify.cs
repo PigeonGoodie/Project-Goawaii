@@ -21,13 +21,16 @@ public class MultiCuteify : MonoBehaviour
     {
         if (done) return;
 
-        foreach(CuteifyableObject c in cuteifyObjects)
+        foreach (CuteifyableObject c in cuteifyObjects)
         {
             if (c.oldObject.activeSelf) return;
         }
 
         oldObject.SetActive(false);
         newObject.SetActive(true);
+
+        Camera.main.GetComponent<CameraShake>().ShakeCamera();
+
         done = true;
     }
 }
