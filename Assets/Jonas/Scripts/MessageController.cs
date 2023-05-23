@@ -11,8 +11,11 @@ public class MessageController : MonoBehaviour
     public GameObject news;
     public GameObject notification;
 
+    private AudioSource audioSource;
+
     private void Awake()
     {
+        audioSource= GetComponent<AudioSource>();
         messages = new List<GameObject>();
 
         foreach (Transform t in transform)
@@ -40,6 +43,7 @@ public class MessageController : MonoBehaviour
 
         if (notification.activeSelf)
         {
+            audioSource.Play();
             notification.SetActive(false);
             return;
         }
