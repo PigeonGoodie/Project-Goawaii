@@ -22,7 +22,7 @@ public class MusicHandler : MonoBehaviour
 
     public void ChangeVolume()
     {
-        AudioListener.volume = volumeSlider.value;
+        AudioListener.volume = volumeSlider.value*4;
         Save();
     }
 
