@@ -37,13 +37,13 @@ public class MessageController : MonoBehaviour
     {
         if (news.activeSelf)
         {
+            audioSource.Play();
             news.SetActive(false);
             return;
         }
 
         if (notification.activeSelf)
         {
-            audioSource.Play();
             notification.SetActive(false);
             return;
         }
