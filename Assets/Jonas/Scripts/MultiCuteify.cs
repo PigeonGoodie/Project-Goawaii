@@ -18,7 +18,7 @@ public class MultiCuteify : CutifyableBase
     {
         if (done) return;
 
-        foreach (CuteifyableObject c in cuteifyObjects)
+        foreach (CutifyableBase c in cuteifyObjects)
         {
             if (c.oldObject.activeSelf) return;
         }
