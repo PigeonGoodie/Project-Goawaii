@@ -2,14 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MultiCuteify : MonoBehaviour
+public class MultiCuteify : CutifyableBase
 {
-    public List<CuteifyableObject> cuteifyObjects;
+    public List<CutifyableBase> cuteifyObjects;
 
     private bool done = false;
-
-    public GameObject oldObject;
-    public GameObject newObject;
 
     private void Start()
     {

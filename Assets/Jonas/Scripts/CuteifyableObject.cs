@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CuteifyableObject : MonoBehaviour
+public class CuteifyableObject : CutifyableBase
 {
-    public GameObject oldObject;
-    public GameObject newObject;
-
     public bool addHealth = false;
     public bool dontCountForGoal = false;
 
