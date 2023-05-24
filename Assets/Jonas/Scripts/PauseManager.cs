@@ -10,6 +10,7 @@ public class PauseManager : MonoBehaviour
     public GameObject winScreen;
 
     private bool paused;
+    public string surveyURL;
 
     private void Awake()
     {
@@ -67,5 +68,11 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 0;
         winScreen.SetActive(true);
+    }
+
+    public void OpenSurvey()
+    {
+        if (string.IsNullOrEmpty(surveyURL)) return;
+        Application.OpenURL(surveyURL);
     }
 }
