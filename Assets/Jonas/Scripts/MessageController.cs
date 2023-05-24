@@ -35,20 +35,20 @@ public class MessageController : MonoBehaviour
 
     private void DisplayNextMessage()
     {
-        if (news.activeSelf)
+        if (news != null && news.activeSelf)
         {
             audioSource.Play();
             news.SetActive(false);
             return;
         }
 
-        if (notification.activeSelf)
+        if (notification != null && notification.activeSelf)
         {
             notification.SetActive(false);
             return;
         }
 
-        if (messagePos >= messages.Count)
+        if (messagePos >= messages.Count && SceneManager.GetActiveScene().buildIndex != 2)
         {
             MessagesDone();
             return;

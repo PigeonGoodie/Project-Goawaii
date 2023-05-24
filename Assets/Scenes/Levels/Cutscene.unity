@@ -1383,6 +1383,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MessageSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 618950925277369660, guid: fc6e742435a9c5f4395658bb30736970,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 618950925277369663, guid: fc6e742435a9c5f4395658bb30736970,
         type: 3}
       propertyPath: m_Pivot.x

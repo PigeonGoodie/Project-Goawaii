@@ -38,7 +38,7 @@ public class ObjectScaleAnimation : MonoBehaviour
             // Apply the current scale to the object
             transform.localScale = currentScale;
 
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime;
             yield return null;
         }
 
