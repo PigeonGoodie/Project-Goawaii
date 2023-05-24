@@ -381,7 +381,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   ChaseSpeed: 2
   detectionRange: 15
-  EnemyChaseSound: {fileID: 8300000, guid: a5a8c10614da90a448e269ed5d302f44, type: 3}
+  EnemyChaseSound: {fileID: 8300000, guid: 5c3dda63b06cef3408e2615abfb0f64f, type: 3}
 --- !u!195 &1073127097006028523
 NavMeshAgent:
   m_ObjectHideFlags: 0
