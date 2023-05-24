@@ -54,6 +54,8 @@ public class MessageController : MonoBehaviour
             return;
         }
 
+        if (messagePos >= messages.Count) return;
+
         messages[messagePos++].SetActive(true);
     }
 

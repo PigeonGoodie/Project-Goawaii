@@ -43,10 +43,13 @@ public class CursorRadialTrack : MonoBehaviour
                     normalizedAngle = (normalizedAngle < 0) ? 1f + normalizedAngle : normalizedAngle;
                     normalizedAngle = 1f - normalizedAngle;
 
-                    if (normalizedAngle > .25f && normalizedAngle < .65f)
-                        normalizedAngle = .25f;
-                    else if (normalizedAngle > .65f)
-                        normalizedAngle = 0;
+                    //if (normalizedAngle > .25f && normalizedAngle < .65f)
+                    //    normalizedAngle = .25f;
+                    //else if (normalizedAngle > .65f)
+                    //    normalizedAngle = 0;
+
+                    if (normalizedAngle > .25f)
+                        return;
 
                     slider.value = normalizedAngle;
                 }
