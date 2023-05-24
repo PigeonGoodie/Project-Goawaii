@@ -15,7 +15,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private LayerMask _wallMask;
 
-    public AudioSource damageAudio;
+    public List<AudioClip> damageAudio;
+    private AudioSource audioSource;
 
     private Rigidbody _rb;
     private Vector3 startPos;
@@ -38,6 +39,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         _rb = GetComponent<Rigidbody>();
         _healthUIManager = GetComponent<PlayerHealth>();
         hp = maxHp;
@@ -120,8 +123,8 @@ public class PlayerController : MonoBehaviour
     {
         int oldHp = hp;
         hp -= dmg;
-        if(hp < oldHp)
-            damageAudio.Play();
+        if (hp < oldHp)
+            PlayDamageAudio();
 
         if (hp <= 0)
         {
@@ -137,6 +140,12 @@ public class PlayerController : MonoBehaviour
         }
 
         _healthUIManager.UpdateHealth(hp);
+    }
+
+    private void PlayDamageAudio()
+    {
+        audioSource.clip = damageAudio[Random.Range(0, damageAudio.Count)];
+        audioSource.Play();
     }
 
     private void CheckPlane()
