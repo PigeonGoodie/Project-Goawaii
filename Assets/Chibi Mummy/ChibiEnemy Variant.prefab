@@ -381,9 +381,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   ChaseSpeed: 2
   detectionRange: 15
-  EnemyIdleSound: {fileID: 0}
   EnemyChaseSound: {fileID: 8300000, guid: a5a8c10614da90a448e269ed5d302f44, type: 3}
-  EnemyDeathSound: {fileID: 8300000, guid: 6b05363bc59bbeb4ebbf3fe1e4a56605, type: 3}
 --- !u!195 &1073127097006028523
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -428,6 +426,12 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 0
+  damageAudio:
+  - {fileID: 8300000, guid: 6abcaac830c896f4589fc779f524b305, type: 3}
+  - {fileID: 8300000, guid: ce47597b23a8af74bb421efa352c917a, type: 3}
+  deathAudio:
+  - {fileID: 8300000, guid: eded5106978972a40b71118f4ae78de5, type: 3}
+  - {fileID: 8300000, guid: 6b05363bc59bbeb4ebbf3fe1e4a56605, type: 3}
 --- !u!136 &3173464584025474790
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -17,16 +17,17 @@ public class EnemyBehaviour : MonoBehaviour
 
     private bool doChase = false;
 
+    private AudioSource audioSource;
+
     //Audio from enemy
-    public AudioClip EnemyIdleSound;
     public AudioClip EnemyChaseSound;
-    public AudioClip EnemyDeathSound;
 
     //Enemy animation
     private Animator animator;
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
     }
     void Start()
@@ -45,6 +46,8 @@ public class EnemyBehaviour : MonoBehaviour
         }
         else if (!doChase && Vector3.Distance(transform.position, Player.position) < detectionRange)
         {
+            audioSource.clip = EnemyChaseSound;
+            audioSource.Play();
             doChase = true;
             Enemy.speed = ChaseSpeed;
             animator.SetBool("doRun", doChase);
