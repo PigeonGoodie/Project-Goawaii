@@ -740,8 +740,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 34f921c6ae504c147bfb28dab27b6067, type: 2}
+  m_sharedMaterial: {fileID: 1315720978216143046, guid: 34f921c6ae504c147bfb28dab27b6067,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -875,8 +876,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: ENUF IS ENUF
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 34f921c6ae504c147bfb28dab27b6067, type: 2}
+  m_sharedMaterial: {fileID: 1315720978216143046, guid: 34f921c6ae504c147bfb28dab27b6067,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1318,6 +1320,16 @@ PrefabInstance:
         place, it stinks LOL
       objectReference: {fileID: 0}
     - target: {fileID: 1986404194, guid: fc6e742435a9c5f4395658bb30736970, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 34f921c6ae504c147bfb28dab27b6067,
+        type: 2}
+    - target: {fileID: 1986404194, guid: fc6e742435a9c5f4395658bb30736970, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1315720978216143046, guid: 34f921c6ae504c147bfb28dab27b6067,
+        type: 2}
+    - target: {fileID: 1986404194, guid: fc6e742435a9c5f4395658bb30736970, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
       objectReference: {fileID: 0}
@@ -1335,7 +1347,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 2a551d3af020d854092ebb42920b1053,
+      objectReference: {fileID: 11400000, guid: 34f921c6ae504c147bfb28dab27b6067,
         type: 2}
     - target: {fileID: 618950923942279702, guid: fc6e742435a9c5f4395658bb30736970,
         type: 3}
@@ -1346,7 +1358,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 1823458192114801032, guid: 2a551d3af020d854092ebb42920b1053,
+      objectReference: {fileID: 1315720978216143046, guid: 34f921c6ae504c147bfb28dab27b6067,
         type: 2}
     - target: {fileID: 618950923942279702, guid: fc6e742435a9c5f4395658bb30736970,
         type: 3}
@@ -1841,10 +1853,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
