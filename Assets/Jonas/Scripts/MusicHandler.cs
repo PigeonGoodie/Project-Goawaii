@@ -5,36 +5,18 @@ using UnityEngine.UI;
 
 public class MusicHandler : MonoBehaviour
 {
-    public Slider volumeSlider;
+    private static bool instanceExists = false;
 
-    void Awake()
+    private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-    }
-
-    private void Start()
-    {
-        if (!PlayerPrefs.HasKey("volume"))
-            PlayerPrefs.SetFloat("volume", .7f);
-
-        Load();
-    }
-
-    public void ChangeVolume()
-    {
-        AudioListener.volume = volumeSlider.value*4;
-        Save();
-    }
-
-    private void Save()
-    {
-        PlayerPrefs.SetFloat("volume", volumeSlider.value);
-    }
-
-    private void Load()
-    {
-        if (!PlayerPrefs.HasKey("volume")) return;
-        volumeSlider.value = PlayerPrefs.GetFloat("volume");
-        ChangeVolume();
+        if (instanceExists)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instanceExists = true;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }

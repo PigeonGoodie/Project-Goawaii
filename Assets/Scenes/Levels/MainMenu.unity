@@ -1502,7 +1502,7 @@ GameObject:
   - component: {fileID: 931080319}
   m_Layer: 0
   m_Name: Background Music
-  m_TagString: Untagged
+  m_TagString: MusicManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1519,7 +1519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948c4701abcaa054092b295f1dd480b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeSlider: {fileID: 1595402584}
 --- !u!82 &931080320
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1946,6 +1945,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105767983}
   m_CullTransparentMesh: 1
+--- !u!1 &1298393386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3326836685533924006, guid: 862d934b3149db94c862ff732a20a840,
+    type: 3}
+  m_PrefabInstance: {fileID: 1595402583}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1309335030
 GameObject:
   m_ObjectHideFlags: 0
@@ -2561,7 +2566,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 931080319}
+      objectReference: {fileID: 1595402587}
+    - target: {fileID: 3326836685533924000, guid: 862d934b3149db94c862ff732a20a840,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326836685533924000, guid: 862d934b3149db94c862ff732a20a840,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VolumeSlider, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3326836685533924001, guid: 862d934b3149db94c862ff732a20a840,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2705,7 +2720,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3326836685533924006, guid: 862d934b3149db94c862ff732a20a840,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1595402587}
   m_SourcePrefab: {fileID: 100100000, guid: 862d934b3149db94c862ff732a20a840, type: 3}
 --- !u!114 &1595402584 stripped
 MonoBehaviour:
@@ -2713,7 +2732,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1595402583}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1298393386}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
@@ -2725,6 +2744,20 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1595402583}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1595402587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298393386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83af6d3d1d37770488d446e8765312b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 1595402584}
+  quarter: 1
 --- !u!1 &1612611232
 GameObject:
   m_ObjectHideFlags: 0

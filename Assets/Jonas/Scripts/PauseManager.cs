@@ -8,6 +8,7 @@ public class PauseManager : MonoBehaviour
     public GameObject pauseScreen;
     public GameObject deathScreen;
     public GameObject winScreen;
+    public GameObject helpScreen;
 
     private bool paused;
     public string surveyURL;
@@ -40,6 +41,7 @@ public class PauseManager : MonoBehaviour
         if (paused)
         {
             Time.timeScale = 1;
+            helpScreen.SetActive(false);
             pauseScreen.SetActive(false);
             paused = false;
         }
@@ -74,5 +76,15 @@ public class PauseManager : MonoBehaviour
     {
         if (string.IsNullOrEmpty(surveyURL)) return;
         Application.OpenURL(surveyURL);
+    }
+
+    public void OpenHelpScreen()
+    {
+        helpScreen.SetActive(true);
+    }
+
+    public void CloseHelpScreen()
+    {
+        helpScreen.SetActive(false);
     }
 }

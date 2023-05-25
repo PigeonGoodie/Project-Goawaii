@@ -9,6 +9,7 @@ TagManager:
   - Glitter
   - Canvas
   - EnemyManager
+  - MusicManager
   layers:
   - Default
   - TransparentFX

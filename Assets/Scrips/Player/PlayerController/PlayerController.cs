@@ -126,6 +126,9 @@ public class PlayerController : MonoBehaviour
         if (hp < oldHp)
             PlayDamageAudio();
 
+        if (hp > maxHp)
+            hp = maxHp;
+
         if (hp <= 0)
         {
             //Debug.Log("Ded");
