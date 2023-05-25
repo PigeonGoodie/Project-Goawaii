@@ -30,6 +30,11 @@ public class MenuController : MonoBehaviour
         activeScreen.SetActive(true);
     }
 
+    public void OpenSurvey()
+    {
+        Application.OpenURL("https://forms.gle/Jnh2BP5YN9ZCufj66");
+    }
+
     public void ExitGame()
     {
         Application.Quit();
